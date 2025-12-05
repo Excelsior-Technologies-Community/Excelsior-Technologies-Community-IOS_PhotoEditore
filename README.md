@@ -42,9 +42,9 @@ A powerful, feature-rich photo editing Swift Package for iOS apps with AI-powere
 1. In Xcode, go to **File → Add Package Dependencies...**
 2. Enter the repository URL:
    ```
-   https://github.com/yourusername/PhotoEditorKit
+   https://github.com/noman1303/Excelsior-Technologies-Community-IOS_PhotoEditore
    ```
-3. Select version rule: **Up to Next Major** (recommended)
+3. Select branch: **Stages**
 4. Click **Add Package**
 
 ### Manual Installation
@@ -368,11 +368,26 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## 🆘 Support
 
 Having issues? Check out:
-- [GitHub Issues](https://github.com/yourusername/PhotoEditorKit/issues)
-- [Documentation](https://github.com/yourusername/PhotoEditorKit/wiki)
-- [Stack Overflow](https://stackoverflow.com/questions/tagged/photoeditorkit)
+- [GitHub Issues](https://github.com/noman1303/Excelsior-Technologies-Community-IOS_PhotoEditore/issues)
+- [Documentation](https://github.com/noman1303/Excelsior-Technologies-Community-IOS_PhotoEditore/wiki)
+- [Repository](https://github.com/noman1303/Excelsior-Technologies-Community-IOS_PhotoEditore)
+
+## 📦 Add as Dependency
+
+To use in your project:
+```
+URL: https://github.com/noman1303/Excelsior-Technologies-Community-IOS_PhotoEditore
+Branch: Stages
+```
+
+## 👨‍💻 Developer
+
+**Developed by Noman Belim** 🚀
+
+- GitHub: [@noman1303](https://github.com/noman1303)
+- Repository: [iOS PhotoEditor](https://github.com/noman1303/Excelsior-Technologies-Community-IOS_PhotoEditore)
 
 ---
 
-Made with ❤️ by developers, for developers
+Made with ❤️ for the iOS developer community
 
