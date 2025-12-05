@@ -9,7 +9,7 @@
 import SwiftUI
 import PhotosUI
 
-@available(iOS 13.0, *)
+@available(iOS 14.0, *)
 struct ImagePicker: UIViewControllerRepresentable {
     @Environment(\.presentationMode) var presentationMode
     

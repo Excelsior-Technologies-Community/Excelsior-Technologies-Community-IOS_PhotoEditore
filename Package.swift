@@ -6,7 +6,7 @@ import PackageDescription
 let package = Package(
     name: "PhotoEditorKit",
     platforms: [
-        .iOS(.v13) // Minimum iOS 13 for background removal fallback
+        .iOS(.v14) // iOS 14+ for SwiftUI features (onChange, etc.)
     ],
     products: [
         // Products define the executables and libraries a package produces, making them visible to other packages.

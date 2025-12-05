@@ -31,7 +31,7 @@ A powerful, feature-rich photo editing Swift Package for iOS apps with AI-powere
 
 ## 📋 Requirements
 
-- iOS 13.0+
+- **iOS 14.0+** (for SwiftUI features)
 - Xcode 14.0+
 - Swift 5.9+
 
@@ -255,7 +255,7 @@ imageScale = max(0.1, min(lastScale * scale, 20.0)) // Your range
 
 ## 📱 iOS Version Features
 
-| Feature | iOS 13 | iOS 15 | iOS 17 |
+| Feature | iOS 14 | iOS 15 | iOS 17 |
 |---------|--------|--------|--------|
 | Text Overlays | ✅ | ✅ | ✅ |
 | Crop | ✅ | ✅ | ✅ |

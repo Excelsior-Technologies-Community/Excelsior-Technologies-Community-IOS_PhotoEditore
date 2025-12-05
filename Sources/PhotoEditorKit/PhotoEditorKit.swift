@@ -24,7 +24,7 @@ public struct PhotoEditorKit {
     public static let version = "1.0.0"
     
     /// Minimum supported iOS version
-    public static let minimumIOSVersion = "13.0"
+    public static let minimumIOSVersion = "14.0"
     
     /// Check if advanced background removal is available (iOS 17+)
     public static var isAdvancedBackgroundRemovalAvailable: Bool {
@@ -42,9 +42,9 @@ public struct PhotoEditorKit {
         return false
     }
     
-    /// Check if basic background removal is available (iOS 13+)
+    /// Check if basic background removal is available (iOS 14+)
     public static var isBasicBackgroundRemovalAvailable: Bool {
-        if #available(iOS 13.0, *) {
+        if #available(iOS 14.0, *) {
             return true
         }
         return false
@@ -52,6 +52,6 @@ public struct PhotoEditorKit {
 }
 
 // Re-export the main view for easier import
-@available(iOS 13.0, *)
+@available(iOS 14.0, *)
 public typealias PhotoEditorView = ContentView
 
