@@ -1,5 +1,7 @@
 # 📘 PhotoEditorKit - Complete Usage Guide
 
+> 💡 **Looking for quick examples?** Check out [INTEGRATION_EXAMPLES.md](INTEGRATION_EXAMPLES.md) for 10+ real-world integration patterns!
+
 ## Step-by-Step Integration Guide
 
 ### 🎯 Option 1: Swift Package Manager (Recommended)
@@ -459,5 +461,11 @@ To update to the latest version:
 
 ---
 
-**Need more help?** Check out the [main README](README.md) or [open an issue](https://github.com/yourusername/PhotoEditorKit/issues)!
+**Need more help?** Check out the [main README](README.md) or [open an issue](https://github.com/noman1303/Excelsior-Technologies-Community-IOS_PhotoEditore/issues)!
+
+---
+
+**Developed by Noman Belim** 🚀
+
+*Empowering iOS developers with powerful photo editing capabilities*
 

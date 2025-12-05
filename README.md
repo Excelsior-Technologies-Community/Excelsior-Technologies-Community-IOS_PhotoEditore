@@ -364,6 +364,12 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 4. **Crop First**: Apply crop before other edits for better performance
 5. **Undo Often**: Don't be afraid to experiment - you can always undo!
 
+## 📚 Documentation & Examples
+
+- **[INTEGRATION_EXAMPLES.md](INTEGRATION_EXAMPLES.md)** - 10+ real-world examples 🔥
+- **[QUICKSTART.md](QUICKSTART.md)** - Get started in 5 minutes
+- **[USAGE_GUIDE.md](USAGE_GUIDE.md)** - Complete feature documentation
+
 ## 🆘 Support
 
 Having issues? Check out:
@@ -381,12 +387,12 @@ Branch: Stages
 
 ## 👨‍💻 Developer
 
-**Developed by Noman Belim** 🚀
+**Created by Noman Belim** 🚀
 
-- GitHub: [@noman1303](https://github.com/noman1303)
-- Repository: [iOS PhotoEditor](https://github.com/noman1303/Excelsior-Technologies-Community-IOS_PhotoEditore)
+- 💼 GitHub: [@noman1303](https://github.com/noman1303)
+- 📦 Repository: [iOS PhotoEditor](https://github.com/noman1303/Excelsior-Technologies-Community-IOS_PhotoEditore)
 
 ---
 
-Made with ❤️ for the iOS developer community
+**Made for the iOS developer community**
 

@@ -3,6 +3,7 @@
 //  PhotoEditorKit
 //
 //  A powerful photo editing package for iOS
+//  Developed by Noman Belim
 //
 
 import SwiftUI
