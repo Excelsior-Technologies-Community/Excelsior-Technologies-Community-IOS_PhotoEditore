@@ -638,8 +638,7 @@ public struct ContentView: View {
         }
     }
     
-    // Fallback for iOS 13+ using Saliency Detection
-    @available(iOS 13.0, *)
+    // Fallback for iOS 15+ using Saliency Detection
     private func removeBackgroundFallbackiOS13(_ image: UIImage) async {
         do {
             guard let cgImage = image.cgImage else {
@@ -677,7 +676,6 @@ public struct ContentView: View {
         }
     }
     
-    @available(iOS 13.0, *)
     private func applyPixelBufferMask(_ mask: CVPixelBuffer, to image: CGImage) throws -> CGImage {
         let ciImage = CIImage(cgImage: image)
         let maskImage = CIImage(cvPixelBuffer: mask)

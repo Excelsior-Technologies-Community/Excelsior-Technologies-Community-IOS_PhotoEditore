@@ -409,18 +409,10 @@ public struct ContentView: View {
                 Text("Using Advanced AI (iOS 17+)")
                     .font(.caption2)
                     .foregroundStyle(.green)
-            } else if #available(iOS 15.0, *) {
+            } else {
                 Text("Using Person Detection (iOS 15+)")
                     .font(.caption2)
                     .foregroundStyle(.orange)
-            } else if #available(iOS 13.0, *) {
-                Text("Using Basic Detection (iOS 13+)")
-                    .font(.caption2)
-                    .foregroundStyle(.yellow)
-            } else {
-                Text("Requires iOS 13+")
-                    .font(.caption2)
-                    .foregroundStyle(.red)
             }
             }
             
@@ -517,30 +509,19 @@ public struct ContentView: View {
                     await MainActor.run {
                         print("⚠️ iOS 17+ method failed: \(error.localizedDescription)")
                         print("Trying fallback method...")
-                        // Try fallback for iOS 15+
-                        if #available(iOS 15.0, *) {
-                            Task {
-                                await removeBackgroundFallbackiOS15(baseImage)
-                            }
+                        // Try fallback for iOS 15-16
+                        Task {
+                            await removeBackgroundFallbackiOS15(baseImage)
                         }
                     }
                 }
             }
-        } else if #available(iOS 15.0, *) {
-            // Fallback for iOS 15+ using saliency detection
-            print("Using iOS 15+ Saliency Detection (Fallback)")
+        } else {
+            // Fallback for iOS 15-16 using person segmentation
+            print("Using iOS 15+ Person Segmentation (Fallback)")
             Task {
                 await removeBackgroundFallbackiOS15(baseImage)
             }
-        } else if #available(iOS 13.0, *) {
-            // Fallback for iOS 13+ using basic saliency
-            print("Using iOS 13+ Basic Saliency (Fallback)")
-            Task {
-                await removeBackgroundFallbackiOS13(baseImage)
-            }
-        } else {
-            print("⚠️ Background removal requires iOS 13 or later")
-            print("=== REMOVE BACKGROUND NOT AVAILABLE ===\n")
         }
     }
     
@@ -597,8 +578,7 @@ public struct ContentView: View {
         return cgImage
     }
     
-    // Fallback for iOS 15+ using Person Segmentation
-    @available(iOS 15.0, *)
+    // Fallback for iOS 15-16 using Person Segmentation
     private func removeBackgroundFallbackiOS15(_ image: UIImage) async {
         do {
             guard let cgImage = image.cgImage else {
@@ -638,46 +618,7 @@ public struct ContentView: View {
         }
     }
     
-    // Fallback for iOS 13+ using Saliency Detection
-    @available(iOS 13.0, *)
-    private func removeBackgroundFallbackiOS13(_ image: UIImage) async {
-        do {
-            guard let cgImage = image.cgImage else {
-                print("⚠️ Failed to get CGImage")
-                return
-            }
-            
-            // Use VNGenerateAttentionBasedSaliencyImageRequest (iOS 13+)
-            let request = VNGenerateAttentionBasedSaliencyImageRequest()
-            let handler = VNImageRequestHandler(cgImage: cgImage, options: [:])
-            try handler.perform([request])
-            
-            guard let result = request.results?.first else {
-                print("⚠️ Failed to detect salient objects")
-                return
-            }
-            
-            // Get the mask (pixelBuffer is not optional)
-            let maskBuffer = result.pixelBuffer
-            
-            // Apply mask to image
-            let maskedImage = try applyPixelBufferMask(maskBuffer, to: cgImage)
-            
-            await MainActor.run {
-                editedImage = UIImage(cgImage: maskedImage, scale: image.scale, orientation: image.imageOrientation)
-                print("✓ Background removed successfully (iOS 13+ fallback)")
-                print("Note: iOS 13 uses basic saliency - may be less accurate")
-                print("=== REMOVE BACKGROUND COMPLETED ===\n")
-            }
-        } catch {
-            await MainActor.run {
-                print("⚠️ iOS 13+ fallback failed: \(error.localizedDescription)")
-                print("=== REMOVE BACKGROUND FAILED ===\n")
-            }
-        }
-    }
     
-    @available(iOS 13.0, *)
     private func applyPixelBufferMask(_ mask: CVPixelBuffer, to image: CGImage) throws -> CGImage {
         let ciImage = CIImage(cgImage: image)
         let maskImage = CIImage(cvPixelBuffer: mask)

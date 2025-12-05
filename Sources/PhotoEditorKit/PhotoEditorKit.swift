@@ -36,18 +36,12 @@ public struct PhotoEditorKit {
     
     /// Check if person segmentation is available (iOS 15+)
     public static var isPersonSegmentationAvailable: Bool {
-        if #available(iOS 15.0, *) {
-            return true
-        }
-        return false
+        return true // Always available since package requires iOS 15+
     }
     
-    /// Check if basic background removal is available (iOS 14+)
+    /// Check if basic background removal is available (iOS 15+)
     public static var isBasicBackgroundRemovalAvailable: Bool {
-        if #available(iOS 14.0, *) {
-            return true
-        }
-        return false
+        return true // Always available since package requires iOS 15+
     }
 }
 
