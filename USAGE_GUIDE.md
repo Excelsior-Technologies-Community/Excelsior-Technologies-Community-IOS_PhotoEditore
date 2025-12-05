@@ -12,7 +12,7 @@
 2. Click on **File** → **Add Package Dependencies...**
 3. In the search bar, paste your repository URL:
    ```
-   https://github.com/yourusername/PhotoEditorKit
+   https://github.com/Excelsior-Technologies-Community/Excelsior-Technologies-Community-IOS_PhotoEditore
    ```
 4. Select the version rule:
    - **Up to Next Major Version**: `1.0.0` < `2.0.0` (Recommended)
@@ -46,7 +46,7 @@ struct MyView: View {
 
 #### Step 1: Download the Source
 
-1. Go to the repository: `https://github.com/yourusername/PhotoEditorKit`
+1. Go to the repository: `https://github.com/Excelsior-Technologies-Community/Excelsior-Technologies-Community-IOS_PhotoEditore`
 2. Click **Code** → **Download ZIP**
 3. Extract the ZIP file
 
@@ -432,8 +432,8 @@ All controls are accessible via VoiceOver and support Dynamic Type.
 
 ## 📞 Support
 
-- **Issues**: [GitHub Issues](https://github.com/yourusername/PhotoEditorKit/issues)
-- **Discussions**: [GitHub Discussions](https://github.com/yourusername/PhotoEditorKit/discussions)
+- **Issues**: [GitHub Issues](https://github.com/Excelsior-Technologies-Community/Excelsior-Technologies-Community-IOS_PhotoEditore/issues)
+- **Discussions**: [GitHub Discussions](https://github.com/Excelsior-Technologies-Community/Excelsior-Technologies-Community-IOS_PhotoEditore/discussions)
 - **Email**: your.email@example.com
 
 ---
@@ -461,7 +461,7 @@ To update to the latest version:
 
 ---
 
-**Need more help?** Check out the [main README](README.md) or [open an issue](https://github.com/noman1303/Excelsior-Technologies-Community-IOS_PhotoEditore/issues)!
+**Need more help?** Check out the [main README](README.md) or [open an issue](https://github.com/Excelsior-Technologies-Community/Excelsior-Technologies-Community-IOS_PhotoEditore/issues)!
 
 ---
 

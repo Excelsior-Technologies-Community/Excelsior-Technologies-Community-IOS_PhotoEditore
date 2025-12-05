@@ -1,8 +1,10 @@
 # 📸 PhotoEditorKit
 
+> **By Excelsior Technologies Community** | Developed by Noman Belim
+
 A powerful, feature-rich photo editing Swift Package for iOS apps with AI-powered background removal, filters, blur effects, text overlays, and intelligent cropping.
 
-![iOS](https://img.shields.io/badge/iOS-13.0+-blue.svg)
+![iOS](https://img.shields.io/badge/iOS-15.0+-blue.svg)
 ![Swift](https://img.shields.io/badge/Swift-5.9+-orange.svg)
 ![License](https://img.shields.io/badge/license-MIT-green.svg)
 
@@ -42,7 +44,7 @@ A powerful, feature-rich photo editing Swift Package for iOS apps with AI-powere
 1. In Xcode, go to **File → Add Package Dependencies...**
 2. Enter the repository URL:
    ```
-   https://github.com/noman1303/Excelsior-Technologies-Community-IOS_PhotoEditore
+   https://github.com/Excelsior-Technologies-Community/Excelsior-Technologies-Community-IOS_PhotoEditore
    ```
 3. Select branch: **Stages**
 4. Click **Add Package**
@@ -373,24 +375,25 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ## 🆘 Support
 
 Having issues? Check out:
-- [GitHub Issues](https://github.com/noman1303/Excelsior-Technologies-Community-IOS_PhotoEditore/issues)
-- [Documentation](https://github.com/noman1303/Excelsior-Technologies-Community-IOS_PhotoEditore/wiki)
-- [Repository](https://github.com/noman1303/Excelsior-Technologies-Community-IOS_PhotoEditore)
+- [GitHub Issues](https://github.com/Excelsior-Technologies-Community/Excelsior-Technologies-Community-IOS_PhotoEditore/issues)
+- [Documentation](https://github.com/Excelsior-Technologies-Community/Excelsior-Technologies-Community-IOS_PhotoEditore/wiki)
+- [Repository](https://github.com/Excelsior-Technologies-Community/Excelsior-Technologies-Community-IOS_PhotoEditore)
 
 ## 📦 Add as Dependency
 
 To use in your project:
 ```
-URL: https://github.com/noman1303/Excelsior-Technologies-Community-IOS_PhotoEditore
+URL: https://github.com/Excelsior-Technologies-Community/Excelsior-Technologies-Community-IOS_PhotoEditore
 Branch: Stages
 ```
 
 ## 👨‍💻 Developer
 
-**Created by Noman Belim** 🚀
+**Developed by Noman Belim** 🚀
 
-- 💼 GitHub: [@noman1303](https://github.com/noman1303)
-- 📦 Repository: [iOS PhotoEditor](https://github.com/noman1303/Excelsior-Technologies-Community-IOS_PhotoEditore)
+- 🏢 Organization: [Excelsior Technologies Community](https://github.com/Excelsior-Technologies-Community)
+- 📦 Repository: [iOS PhotoEditor](https://github.com/Excelsior-Technologies-Community/Excelsior-Technologies-Community-IOS_PhotoEditore)
+- 💼 Developer: [@noman1303](https://github.com/noman1303)
 
 ---
 

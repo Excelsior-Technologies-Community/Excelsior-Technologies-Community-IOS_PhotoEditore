@@ -10,7 +10,7 @@ Complete examples showing how to integrate PhotoEditorKit into your iOS projects
 
 1. Add PhotoEditorKit package:
 ```
-URL: https://github.com/noman1303/Excelsior-Technologies-Community-IOS_PhotoEditore
+URL: https://github.com/Excelsior-Technologies-Community/Excelsior-Technologies-Community-IOS_PhotoEditore
 Branch: Stages
 Minimum iOS: 15.0
 ```
@@ -508,7 +508,7 @@ NavigationStack {
 
 ---
 
-**Questions?** Open an issue on [GitHub](https://github.com/noman1303/Excelsior-Technologies-Community-IOS_PhotoEditore/issues)
+**Questions?** Open an issue on [GitHub](https://github.com/Excelsior-Technologies-Community/Excelsior-Technologies-Community-IOS_PhotoEditore/issues)
 
 ---
 

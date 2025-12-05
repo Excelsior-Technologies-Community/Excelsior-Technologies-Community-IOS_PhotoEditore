@@ -6,7 +6,7 @@ Get up and running in 5 minutes!
 
 ### In Xcode:
 1. **File** → **Add Package Dependencies...**
-2. Paste URL: `https://github.com/noman1303/Excelsior-Technologies-Community-IOS_PhotoEditore`
+2. Paste URL: `https://github.com/Excelsior-Technologies-Community/Excelsior-Technologies-Community-IOS_PhotoEditore`
 3. Select branch: **Stages**
 4. Click **Add Package**
 5. Done! ✅
@@ -84,11 +84,11 @@ NavigationLink("Photo Editor") {
 - [Integration Examples](INTEGRATION_EXAMPLES.md) - 10+ real-world examples
 - [Full Documentation](README.md)
 - [Detailed Usage Guide](USAGE_GUIDE.md)
-- [GitHub Repository](https://github.com/noman1303/Excelsior-Technologies-Community-IOS_PhotoEditore)
+- [GitHub Repository](https://github.com/Excelsior-Technologies-Community/Excelsior-Technologies-Community-IOS_PhotoEditore)
 
 ## 🆘 Need Help?
 
-- [Issues](https://github.com/noman1303/Excelsior-Technologies-Community-IOS_PhotoEditore/issues)
+- [Issues](https://github.com/Excelsior-Technologies-Community/Excelsior-Technologies-Community-IOS_PhotoEditore/issues)
 - Email: Belimnoman1303@gmail.com
 
 ---
