@@ -6,7 +6,7 @@ import PackageDescription
 let package = Package(
     name: "PhotoEditorKit",
     platforms: [
-        .iOS(.v14) // iOS 14+ for SwiftUI features (onChange, etc.)
+        .iOS(.v15) // iOS 15+ for modern SwiftUI and Person Segmentation
     ],
     products: [
         // Products define the executables and libraries a package produces, making them visible to other packages.
