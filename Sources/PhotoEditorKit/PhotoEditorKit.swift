@@ -52,6 +52,5 @@ public struct PhotoEditorKit {
 }
 
 // Re-export the main view for easier import
-@available(iOS 15.0, *)
 public typealias PhotoEditorView = ContentView
 

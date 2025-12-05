@@ -8,7 +8,6 @@
 import SwiftUI
 import PhotosUI
 
-@available(iOS 15.0, *)
 struct ImagePicker: UIViewControllerRepresentable {
     @Environment(\.dismiss) private var dismiss
     
