@@ -14,6 +14,7 @@ public struct ContentView: View {
     
     // MARK: - State
     @State private var canvasSize: CGSize = .zero
+    @State private var userCropRect: CGRect = .zero
 
     @State private var inputImage: UIImage?
     @State private var editedImage: UIImage?
@@ -153,9 +154,9 @@ public struct ContentView: View {
 
                         // Crop overlay
                         if isCropping {
-                            CropOverlayView(aspectRatio: cropAspectRatio)
+                            ResizableCropOverlay(cropRect: $userCropRect, canvasSize: canvasSize)
                         }
-                        
+
                         // Focus area overlay for selective blur
                         if useSelectiveBlur && activeTool == .blur {
                             FocusAreaOverlay(
@@ -944,7 +945,9 @@ public struct ContentView: View {
     private func applyCrop() {
         guard let baseImage = editedImage ?? inputImage else { return }
         guard let ciImage = CIImage(image: baseImage) else { return }
-        
+        let cropOverlayRect = userCropRect
+
+
         saveToHistory() // Save current state before cropping
         
         let imageSize = baseImage.size
@@ -979,7 +982,7 @@ public struct ContentView: View {
         print("Displayed image origin: \(displayedImageOrigin)")
         
         // Calculate the crop overlay size (with padding)
-        let cropOverlayRect = calculateCropOverlayRect(in: canvasSize)
+        
         print("Crop overlay rect: \(cropOverlayRect)")
         
         let cropInImageSpace = CGRect(
@@ -1041,23 +1044,21 @@ public struct ContentView: View {
         lastImageOffset = .zero
         lastScale = 1.0
     }
-    
-    private func calculateCropOverlayRect(in size: CGSize) -> CGRect {
+    private func calculateCropOverlayRect(in canvas: CGSize) -> CGRect {
         let padding: CGFloat = 40
-        let availableWidth = size.width - 2 * padding
-        let availableHeight = size.height - 2 * padding
-        
+        let availableWidth = canvas.width - 2 * padding
+        let availableHeight = canvas.height - 2 * padding
+
         let width: CGFloat
         let height: CGFloat
-        
+
         if cropAspectRatio == .free || cropAspectRatio == .original {
-            // Free crop - use all available space
             width = availableWidth
             height = availableHeight
         } else {
-            // Fixed aspect ratio - fit within available space
             let targetRatio = cropAspectRatio.aspectRatio
             let availableRatio = availableWidth / availableHeight
+            
             if availableRatio > targetRatio {
                 height = availableHeight
                 width = height * targetRatio
@@ -1066,14 +1067,15 @@ public struct ContentView: View {
                 height = width / targetRatio
             }
         }
-        
+
         return CGRect(
-            x: (size.width - width) / 2,
-            y: (size.height - height) / 2,
+            x: (canvas.width - width) / 2,
+            y: (canvas.height - height) / 2,
             width: width,
             height: height
         )
     }
+
     
     private func cancelCrop() {
         isCropping = false
@@ -1736,7 +1738,120 @@ enum CropAspectRatio: CaseIterable {
         }
     }
 }
+enum HandlePosition {
+    case topLeft
+    case topRight
+    case bottomLeft
+    case bottomRight
+}
 
-#Preview {
-    ContentView()
+struct ResizableCropOverlay: View {
+    @Binding var cropRect: CGRect            // dynamic crop area
+    let canvasSize: CGSize
+    let minSize: CGFloat = 80                // minimum crop size
+    
+    @State private var lastRect: CGRect = .zero
+    
+    var body: some View {
+        ZStack {
+            // Dark outside mask
+            Color.black.opacity(0.5)
+                .mask(
+                    Rectangle().fill(style: FillStyle(eoFill: true))
+                        .overlay(
+                            Rectangle()
+                                .path(in: cropRect)
+                                .fill(Color.black)
+                        )
+                )
+                .animation(.easeInOut, value: cropRect)
+            
+            // Crop Border
+            Rectangle()
+                .strokeBorder(Color.white, lineWidth: 2)
+                .frame(width: cropRect.width, height: cropRect.height)
+                .position(x: cropRect.midX, y: cropRect.midY)
+            
+            // Four corner drag handles
+            cropHandle(.topLeft)
+            cropHandle(.topRight)
+            cropHandle(.bottomLeft)
+            cropHandle(.bottomRight)
+        }
+        .onAppear {
+            lastRect = cropRect
+        }
+    }
+    
+    // MARK: - Crop Handle Builder
+    @ViewBuilder
+    private func cropHandle(_ position: HandlePosition) -> some View {
+        Circle()
+            .fill(Color.white)
+            .frame(width: 22, height: 22)
+            .position(positionPoint(position))
+            .gesture(
+                DragGesture()
+                    .onChanged { value in
+                        resizeCrop(position, translation: value.translation)
+                    }
+                    .onEnded { _ in lastRect = cropRect }
+            )
+    }
+    
+    // MARK: - Handle Position
+    private func positionPoint(_ pos: HandlePosition) -> CGPoint {
+        switch pos {
+        case .topLeft: return CGPoint(x: cropRect.minX, y: cropRect.minY)
+        case .topRight: return CGPoint(x: cropRect.maxX, y: cropRect.minY)
+        case .bottomLeft: return CGPoint(x: cropRect.minX, y: cropRect.maxY)
+        case .bottomRight: return CGPoint(x: cropRect.maxX, y: cropRect.maxY)
+        }
+    }
+    
+    private func resizeCrop(_ pos: HandlePosition, translation: CGSize) {
+        var rect = lastRect
+        
+        switch pos {
+        case .topLeft:
+            rect.origin.x += translation.width
+            rect.origin.y += translation.height
+            rect.size.width -= translation.width
+            rect.size.height -= translation.height
+            
+        case .topRight:
+            rect.origin.y += translation.height
+            rect.size.width += translation.width
+            rect.size.height -= translation.height
+            
+        case .bottomLeft:
+            rect.origin.x += translation.width
+            rect.size.width -= translation.width
+            rect.size.height += translation.height
+            
+        case .bottomRight:
+            rect.size.width += translation.width
+            rect.size.height += translation.height
+        }
+        
+        // Minimum size
+        rect.size.width = max(rect.size.width, minSize)
+        rect.size.height = max(rect.size.height, minSize)
+        
+        // Clamp inside canvas
+        rect.origin.x = max(0, rect.origin.x)
+        rect.origin.y = max(0, rect.origin.y)
+        
+        if rect.maxX > canvasSize.width {
+            rect.size.width = canvasSize.width - rect.origin.x
+        }
+        if rect.maxY > canvasSize.height {
+            rect.size.height = canvasSize.height - rect.origin.y
+        }
+        
+        cropRect = rect
+    }
+    
+    
+    
 }
