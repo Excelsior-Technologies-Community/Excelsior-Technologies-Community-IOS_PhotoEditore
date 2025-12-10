@@ -49,12 +49,11 @@ A powerful, feature-rich photo editing Swift Package for iOS apps with AI-powere
 3. Select branch: **Stages**
 4. Click **Add Package**
 
-### Manual Installation
+5. Add packeg
 
-1. Download the source code
-2. Copy `Sources/PhotoEditorKit` to your project
-3. Add the files to your target
-
+'''
+import PhotoEditorKit
+'''
 ## 🚀 Quick Start
 
 ### Basic Usage
