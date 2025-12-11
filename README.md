@@ -1,4 +1,4 @@
-# 📸 PhotoEditorKit
+#  PhotoEditorKit
 
 > **By Excelsior Technologies Community** | Developed by Noman Belim
 
@@ -8,43 +8,43 @@ A powerful, feature-rich photo editing Swift Package for iOS apps with AI-powere
 ![Swift](https://img.shields.io/badge/Swift-5.9+-orange.svg)
 ![License](https://img.shields.io/badge/license-MIT-green.svg)
 
-## ✨ Features
+##   Features
 
-### 🎨 Core Editing Tools
-- ✅ **Text Overlays** - Add customizable text with drag, pinch-to-resize, and color selection
-- ✅ **Smart Crop** - Interactive crop with pinch-to-zoom and pan (Free, Square, 4:3, 16:9, 3:2)
-- ✅ **10+ Filters** - Sepia, Noir, Chrome, Fade, Instant, Mono, Vivid, and more
-- ✅ **Blur Effects** - Gaussian, Motion, and Zoom blur with selective focus area
-- ✅ **AI Background Removal** - Multi-iOS version support (iOS 13+, 15+, 17+)
-- ✅ **Undo/Redo** - Full edit history with up to 10 states
-- ✅ **High-Resolution Export** - Smart scaling for optimal quality and performance
+###   Core Editing Tools
+-   **Text Overlays** - Add customizable text with drag, pinch-to-resize, and color selection
+-   **Smart Crop** - Interactive crop with pinch-to-zoom and pan (Free, Square, 4:3, 16:9, 3:2)
+-   **10+ Filters** - Sepia, Noir, Chrome, Fade, Instant, Mono, Vivid, and more
+-   **Blur Effects** - Gaussian, Motion, and Zoom blur with selective focus area
+-   **AI Background Removal** - Multi-iOS version support (iOS 13+, 15+, 17+)
+-   **Undo/Redo** - Full edit history with up to 10 states
+-   **High-Resolution Export** - Smart scaling for optimal quality and performance
 
-### 🤖 AI Features
+###   AI Features
 - **iOS 17+**: Advanced subject extraction (people, animals, objects) - 95-99% accuracy
 - **iOS 15-16**: Person segmentation for portraits - 85-90% accuracy
 - **iOS 13-14**: Saliency-based detection - 70-80% accuracy
 
-### 🎯 Advanced Capabilities
+###   Advanced Capabilities
 - **Selective Blur** - Focus area with adjustable circular mask
 - **Interactive Crop** - Zoom up to 10x for precise detail cropping
 - **Real-time Preview** - See changes instantly
 - **Memory Efficient** - Auto-scales images to prevent crashes
 - **Orientation Preservation** - No rotation issues
 
-## 📋 Requirements
+##   Requirements
 
 - **iOS 15.0+** (for modern SwiftUI and Person Segmentation)
 - Xcode 14.0+
 - Swift 5.9+
 
-## 📦 Installation
+##   Installation
 
 ### Swift Package Manager (Recommended)
 
 1. In Xcode, go to **File → Add Package Dependencies...**
 2. Enter the repository URL:
    ```
-   https://github.com/Excelsior-Technologies-Community/Excelsior-Technologies-Community-IOS_PhotoEditore
+ https://github.com/Excelsior-Technologies-Community/IOS_PhotoEditor
    ```
 3. Select branch: **Stages**
 4. Click **Add Package**
@@ -54,7 +54,7 @@ A powerful, feature-rich photo editing Swift Package for iOS apps with AI-powere
 '''
 import PhotoEditorKit
 '''
-## 🚀 Quick Start
+##   Quick Start
 
 ### Basic Usage
 
@@ -104,7 +104,7 @@ struct PhotoEditingView: View {
 }
 ```
 
-## 📖 Detailed Usage Guide
+##   Detailed Usage Guide
 
 ### 1. Text Overlay
 
@@ -192,7 +192,7 @@ struct PhotoEditingView: View {
 // - Works for all edits
 ```
 
-## 🎨 Customization
+##   Customization
 
 ### Modify Colors
 
@@ -220,7 +220,7 @@ extension FilterType {
 }
 ```
 
-## 🔧 Configuration Options
+##   Configuration Options
 
 ### Maximum Image Resolution
 
@@ -267,7 +267,7 @@ imageScale = max(0.1, min(lastScale * scale, 20.0)) // Your range
 | Remove BG (Person) | ✅ | ✅ | ✅ |
 | Remove BG (Advanced) | ❌ | ❌ | ✅ |
 
-## 🏗️ Architecture
+##   Architecture
 
 ```
 PhotoEditorKit/
@@ -288,7 +288,7 @@ PhotoEditorKit/
     └── UIImage+Extensions.swift     # Helper methods
 ```
 
-## 🎯 Use Cases
+##   Use Cases
 
 ### 1. Social Media App
 Add photo editing before posting
@@ -305,21 +305,21 @@ Add text and stickers to photos
 ### 5. Photo Gallery App
 Full editing suite for users
 
-## ⚡ Performance
+##   Performance
 
 - **Memory Efficient**: Auto-scales images to max 4000px
 - **Fast Processing**: Optimized Core Image filters
 - **Responsive UI**: Smooth 60fps interactions
 - **Background Processing**: AI tasks run asynchronously
 
-## 🐛 Known Limitations
+##   Known Limitations
 
 1. **High-Res Images**: Very large images (>8000px) are scaled down
 2. **iOS 13-14 Background Removal**: Less accurate than newer versions
 3. **Undo Limit**: Only 10 states stored (configurable)
 4. **Text After Crop**: Text overlays are cleared when cropping
 
-## 🤝 Contributing
+##   Contributing
 
 Contributions are welcome! Please feel free to submit a Pull Request.
 
@@ -328,73 +328,4 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
 4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
-
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 👨‍💻 Author
-
-**Your Name**
-- GitHub: [@yourusername](https://github.com/yourusername)
-- Email: your.email@example.com
-
-## 🙏 Acknowledgments
-
-- Built with SwiftUI
-- Uses Apple's Vision framework for AI features
-- Core Image for filters and effects
-
-## 📝 Changelog
-
-### Version 1.0.0 (2024)
-- ✨ Initial release
-- 🎨 Text overlays with full customization
-- ✂️ Interactive crop with zoom & pan
-- 🎭 10+ professional filters
-- 🌫️ Blur effects with selective focus
-- 🤖 AI background removal (iOS 13+)
-- ⏮️ Undo with 10-state history
-- 📱 iPhone & iPad support
-
-## 💡 Tips & Tricks
-
-1. **Best Quality**: Use original quality images for best results
-2. **Background Removal**: Works best with clear subject-background separation
-3. **Selective Blur**: Use for portrait-mode effect on any photo
-4. **Crop First**: Apply crop before other edits for better performance
-5. **Undo Often**: Don't be afraid to experiment - you can always undo!
-
-## 📚 Documentation & Examples
-
-- **[INTEGRATION_EXAMPLES.md](INTEGRATION_EXAMPLES.md)** - 10+ real-world examples 🔥
-- **[QUICKSTART.md](QUICKSTART.md)** - Get started in 5 minutes
-- **[USAGE_GUIDE.md](USAGE_GUIDE.md)** - Complete feature documentation
-
-## 🆘 Support
-
-Having issues? Check out:
-- [GitHub Issues](https://github.com/Excelsior-Technologies-Community/Excelsior-Technologies-Community-IOS_PhotoEditore/issues)
-- [Documentation](https://github.com/Excelsior-Technologies-Community/Excelsior-Technologies-Community-IOS_PhotoEditore/wiki)
-- [Repository](https://github.com/Excelsior-Technologies-Community/Excelsior-Technologies-Community-IOS_PhotoEditore)
-
-## 📦 Add as Dependency
-
-To use in your project:
-```
-URL: https://github.com/Excelsior-Technologies-Community/Excelsior-Technologies-Community-IOS_PhotoEditore
-Branch: Stages
-```
-
-## 👨‍💻 Developer
-
-**Developed by Noman Belim** 🚀
-
-- 🏢 Organization: [Excelsior Technologies Community](https://github.com/Excelsior-Technologies-Community)
-- 📦 Repository: [iOS PhotoEditor](https://github.com/Excelsior-Technologies-Community/Excelsior-Technologies-Community-IOS_PhotoEditore)
-- 💼 Developer: [@noman1303](https://github.com/noman1303)
-
----
-
-**Made for the iOS developer community**
-
+ 
