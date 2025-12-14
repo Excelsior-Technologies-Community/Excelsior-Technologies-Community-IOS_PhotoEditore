@@ -4,10 +4,6 @@
 
 A powerful, feature-rich photo editing Swift Package for iOS apps with AI-powered background removal, filters, blur effects, text overlays, and intelligent cropping.
 
-![iOS](https://img.shields.io/badge/iOS-15.0+-blue.svg)
-![Swift](https://img.shields.io/badge/Swift-5.9+-orange.svg)
-![License](https://img.shields.io/badge/license-MIT-green.svg)
-
 ##   Features
 
 ###   Core Editing Tools
