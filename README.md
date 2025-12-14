@@ -35,7 +35,7 @@ A powerful, feature-rich photo editing Swift Package for iOS apps with AI-powere
 1. In Xcode, go to **File → Add Package Dependencies...**
 2. Enter the repository URL:
    ```
- https://github.com/Excelsior-Technologies-Community/IOS_PhotoEditor
+   https://github.com/Excelsior-Technologies-Community/IOS_PhotoEditor
    ```
 3. Select branch: **Stages**
 4. Click **Add Package**
@@ -45,11 +45,12 @@ A powerful, feature-rich photo editing Swift Package for iOS apps with AI-powere
 '''
 import PhotoEditorKit
 '''
+
 ##   Quick Start
 
 ### Basic Usage
 
-```swift
+```
 import SwiftUI
 import PhotoEditorKit
 
