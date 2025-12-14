@@ -19,11 +19,6 @@ A powerful, feature-rich photo editing Swift Package for iOS apps with AI-powere
 -   **Undo/Redo** - Full edit history with up to 10 states
 -   **High-Resolution Export** - Smart scaling for optimal quality and performance
 
-###   AI Features
-- **iOS 17+**: Advanced subject extraction (people, animals, objects) - 95-99% accuracy
-- **iOS 15-16**: Person segmentation for portraits - 85-90% accuracy
-- **iOS 13-14**: Saliency-based detection - 70-80% accuracy
-
 ###   Advanced Capabilities
 - **Selective Blur** - Focus area with adjustable circular mask
 - **Interactive Crop** - Zoom up to 10x for precise detail cropping
