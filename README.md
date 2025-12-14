@@ -43,7 +43,7 @@ A powerful, feature-rich photo editing Swift Package for iOS apps with AI-powere
 5. Add packeg
 
 '''
-import PhotoEditorKit
+import IOS_PhotoEditor
 '''
 
 ##   Quick Start
@@ -84,18 +84,7 @@ struct MyApp: View {
 }
 ```
 
-### Pre-loading an Image
-
-```swift
-struct PhotoEditingView: View {
-    let imageToEdit: UIImage
-    
-    var body: some View {
-        PhotoEditorView(inputImage: imageToEdit)
-    }
-}
-```
-
+ 
 ##   Detailed Usage Guide
 
 ### 1. Text Overlay
